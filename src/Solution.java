@@ -2,14 +2,13 @@ import java.util.Scanner;
 
 class Calculator{
 
-    public int power(int n, int p) {
-        return 0;
+    public int power(int n, int p) throws Exception {
+        if ((n < 0) && (p < 0)) {
+            System.out.println("n and p should be non-negative");
+        }
+        return (int) Math.pow(n, p);
     }
-
-
 }
-
-
 class Solution{
 
     public static void main(String[] args) {
