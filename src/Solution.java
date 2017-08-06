@@ -1,15 +1,19 @@
 import java.util.Scanner;
 
-class Calculator{
-
+class Calculator {
     public int power(int n, int p) throws Exception {
-        if ((n < 0) && (p < 0)) {
-            System.out.println("n and p should be non-negative");
+        // throws an exception if input is negative
+        if ((n < 0) || (p < 0)) {
+            // print exception error only, and proceeds to take next input
+            throw new Exception("n and p should be non-negative");
+        } else {
+            // returns answer if inputs are not negative
+            return (int) Math.pow(n, p);
         }
-        return (int) Math.pow(n, p);
     }
 }
-class Solution{
+
+class Solution {
 
     public static void main(String[] args) {
 
@@ -23,8 +27,7 @@ class Solution{
             try {
                 int ans = myCalculator.power(n, p);
                 System.out.println(ans);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
